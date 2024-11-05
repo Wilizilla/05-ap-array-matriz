@@ -33,11 +33,14 @@ formMain.addEventListener('submit', function(event) {
         }
     }
 console.log(impares);
+console.log(pares);
 
     // manda o valor para interface
 document.getElementById('final-result').classList.remove('is-hidden');
-document.getElementById('div-area').innerHTML = (impares);
-console.log ('print result on html: success');
+document.getElementById('div-area').innerHTML = ('Existem ' + pares.length + ' números pares');
+document.getElementById('div-area2').innerHTML = ('Existem ' + impares.length + ' números impares');
+console.log ('Quantidade de números pares: ' + pares.length);
+console.log ('Quantidade de números impares: ' + impares.length);
 
     });
         

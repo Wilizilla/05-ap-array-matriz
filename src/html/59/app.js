@@ -17,27 +17,18 @@ formMain.addEventListener('submit', function(event) {
     vetCapt.map(element => element.trim());
     let vetNum = vetCapt.map(element => Number(element));
     console.log('Array: ' + vetNum);
-    console.log('Array length: '+vetNum.length);
+    console.log('Array length: ' + vetNum.length);
     
-    // Variáveis
-    var impares = [];
-    var pares = [];
-    let i = 0;
-    
-    // Laço
-    for ( i = 0 ; i < vetNum.length; i++ ) {
-        if (vetNum[i] % 2 !== 0){
-            impares.push(vetNum[i]);
-        } else {
-            pares.push(vetNum[i]);
-        }
-    }
-console.log(impares);
-
+    // separação em 4x4
+    let matVal = [];
+    for ( let i = 0; i <= 3; i++){
+    matVal.push(vetNum.slice(i * 4, (i + 1) * 4))
+}
     // manda o valor para interface
 document.getElementById('final-result').classList.remove('is-hidden');
-document.getElementById('div-area').innerHTML = (impares);
-console.log ('print result on html: success');
-
-    });
-        
+document.getElementById('div-area').innerHTML = (matVal[0]);
+document.getElementById('div-area2').innerHTML = (matVal[1]);
+document.getElementById('div-area3').innerHTML = (matVal[2]);
+document.getElementById('div-area4').innerHTML = (matVal[3]);
+console.log (matVal);
+});

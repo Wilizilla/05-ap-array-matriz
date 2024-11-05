@@ -20,24 +20,13 @@ formMain.addEventListener('submit', function(event) {
     console.log('Array length: '+vetNum.length);
     
     // Variáveis
-    var impares = [];
-    var pares = [];
-    let i = 0;
+    var menorNum = Math.min(...vetNum);
     
-    // Laço
-    for ( i = 0 ; i < vetNum.length; i++ ) {
-        if (vetNum[i] % 2 !== 0){
-            impares.push(vetNum[i]);
-        } else {
-            pares.push(vetNum[i]);
-        }
-    }
-console.log(impares);
 
     // manda o valor para interface
 document.getElementById('final-result').classList.remove('is-hidden');
-document.getElementById('div-area').innerHTML = (impares);
-console.log ('print result on html: success');
+document.getElementById('div-area').innerHTML = (menorNum);
+console.log ('O menor número é: ' + menorNum);
 
     });
         
